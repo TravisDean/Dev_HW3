@@ -19,10 +19,32 @@ class TestGraph(unittest.TestCase):
 
 
 
-    def test_is_adjacent(self):
-        #self.assertTrue(g1.h)
-        self.fail()
+    def test_get_adjlist_q1(self):
+        g = self.a
+        v = 'A'
+        exp = []
+        res = g.get_adjlist(v)
+        self.assertEqual(res, exp)
 
+    def test_get_adjlist_q2(self):
+        g = self.aBD
+        v = 'A'
+        exp = ['B','D']
+        res = g.get_adjlist(v)
+        self.assertEqual(res, exp)
+
+    def test_get_adjlist_q3(self):
+        g = self.emp
+        v = ''
+        exp = None
+        res = g.get_adjlist(v)
+        self.assertEqual(res, exp)
+
+    def test_is_adjacent_correct_q4(self):
+        g = self.aBD
+        v = ('A','B')
+        res = g.is_adjacent(*v)
+        self.assertTrue(res)
 
 
 

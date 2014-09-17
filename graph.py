@@ -12,17 +12,26 @@ class Graph(object):
         return str(self.nodes)
 
     def __getitem__(self, item):
-        return self.nodes.__getitem__(item) if self.nodes.__contains__(item) else None
+        """
+
+
+        :rtype : object
+        :param item:
+        :return:
+        """
+        return self.nodes[item]
 
     def get_adjlist(self, node):
-        return self.nodes[node]
+        if node in self.nodes:
+            return self.nodes[node]
+
 
 
 
 
     def is_adjacent(self, node1, node2):
-        if self.nodes.__contains__(node1):
-            return node2[node1]
+        if not node1 in self.nodes: return False
+        if node2 in self.nodes[node1]: return True
         return False
 
 
@@ -33,6 +42,7 @@ class Graph(object):
 
 
     def __iter__(self):
+        return iter(self)
         pass
 
 
@@ -50,7 +60,3 @@ class Graph(object):
 
 
 g1 = Graph({'A': ['B', 'D'], 'B': ['A', 'D', 'C'], 'C': ['B'], 'D': ['A', 'B'], 'E': []})
-
-
-
-pass
