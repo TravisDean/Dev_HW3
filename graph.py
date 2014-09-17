@@ -36,7 +36,7 @@ class Graph(object):
 
 
     def num_nodes(self):
-
+        return len(self.nodes)
         pass
 
 
@@ -47,7 +47,7 @@ class Graph(object):
 
 
     def __contains__(self, node):
-        pass
+        return node in self.nodes
 
 
 

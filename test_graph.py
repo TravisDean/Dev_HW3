@@ -17,8 +17,7 @@ class TestGraph(unittest.TestCase):
         self.aBbAc = Graph({'A': ['B'], 'B': ['A'], 'C': []})
         self.aBbAc = Graph({'A': ['B'], 'B': ['A'], 'C': ['A','B']})
 
-
-
+#region get_adj_testing
     def test_get_adjlist_q1(self):
         g = self.a
         v = 'A'
@@ -39,12 +38,157 @@ class TestGraph(unittest.TestCase):
         exp = None
         res = g.get_adjlist(v)
         self.assertEqual(res, exp)
-
-    def test_is_adjacent_correct_q4(self):
+#endregion
+#region is_adj_test
+    def test_is_adjacent_q4(self):
         g = self.aBD
         v = ('A','B')
         res = g.is_adjacent(*v)
         self.assertTrue(res)
+
+    def test_is_adjacent_q5(self):
+        g = self.aBD
+        v = ('B','A')
+        res = g.is_adjacent(*v)
+        self.assertFalse(res)
+
+    def test_is_adjacent_q6(self):
+        g = self.emp
+        v = ('B','A')
+        res = g.is_adjacent(*v)
+        self.assertFalse(res)
+
+    def test_num_nodes_q7(self):
+        g = self.emp
+        res = g.num_nodes()
+        self.assertEqual(res, 0)
+
+
+    def test_num_nodes_q8(self):
+        g = self.big
+        res = g.num_nodes()
+        self.assertEqual(res, 5)
+
+
+    def test_contains_q9(self):
+        g = self.aBD
+        v = 'A'
+        res = g.__contains__(v)
+        self.assertTrue(res)
+
+    def test_contains_q10(self):
+        g = self.aBD
+        v = 'B'
+        res = g.__contains__(v)
+        self.assertFalse(res)
+
+    def test_len_q11(self):
+        g = self.emp
+        res = len(g)
+        self.assertEqual(res, 0)
+
+    def test_len_q12(self):
+        g = self.aBD
+        res = len(g)
+        self.assertEqual(res, 3)
+
+    def test_addNode_q13(self):
+        g = self.emp
+        v = 'A'
+        res = g.addNode(v)
+        self.assertTrue(res)
+
+    def test_addNode_q14(self):
+        g = self.aBD
+        v = 'A'
+        res = g.addNode(v)
+        self.assertFalse(res)
+
+    def test_link_nodes_q15(self):
+        g = self.aBbA
+        v = ('A','B')
+        res = g.link_nodes(*v)
+        self.assertFalse(res)
+
+    def test_link_nodes_q16(self):
+        g = self.aBbA
+        v = ('A','B')
+        res = g.link_nodes(*v)
+        self.assertFalse(res)
+
+    def test_link_nodes_q17(self):
+        g = self.aBbA
+        v = ('A','B')
+        res = g.link_nodes(*v)
+        self.assertFalse(res)
+
+    def test_link_nodes_q18(self):
+        g = self.aBbA
+        v = ('A','B')
+        res = g.link_nodes(*v)
+        self.assertFalse(res)
+
+    def test_link_nodes_q19(self):
+        g = self.aBbA
+        v = ('A','B')
+        res = g.link_nodes(*v)
+        self.assertFalse(res)
+
+    def test_contains_q10(self):
+        g = self.aBD
+        v = 'B'
+        res = g.__contains__(v)
+        self.assertFalse(res)
+
+    def test_contains_q10(self):
+        g = self.aBD
+        v = 'B'
+        res = g.__contains__(v)
+        self.assertFalse(res)
+
+    def test_contains_q10(self):
+        g = self.aBD
+        v = 'B'
+        res = g.__contains__(v)
+        self.assertFalse(res)
+
+    def test_contains_q10(self):
+        g = self.aBD
+        v = 'B'
+        res = g.__contains__(v)
+        self.assertFalse(res)
+
+    def test_contains_q10(self):
+        g = self.aBD
+        v = 'B'
+        res = g.__contains__(v)
+        self.assertFalse(res)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
