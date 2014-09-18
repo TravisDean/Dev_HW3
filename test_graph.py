@@ -5,6 +5,7 @@ from graph import Graph
 
 # noinspection PyPep8Naming
 class TestGraph(unittest.TestCase):
+    """Allows testing of all functions of our graph class."""
     def setUp(self):
         self.emp = Graph()
         self.big = Graph({'A': ['B', 'D'], 'B': ['A', 'D', 'C'], 'C': ['B'], 'D': ['A', 'B'], 'E': []})

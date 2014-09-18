@@ -73,6 +73,3 @@ class Graph(object):
                 self.nodes[node2].remove(node1)
                 return True
         return False
-
-
-g2 = Graph({'A': ['B', 'D'], 'B': ['A', 'D', 'C'], 'C': ['B'], 'D': ['A', 'B'], 'E': []})
